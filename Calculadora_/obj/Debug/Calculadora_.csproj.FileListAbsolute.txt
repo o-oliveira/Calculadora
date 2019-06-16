@@ -1,0 +1,10 @@
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\Calculadora_.exe.config
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\Calculadora_.exe
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\Calculadora_.pdb
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.csprojAssemblyReference.cache
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.Form1.resources
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.Properties.Resources.resources
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.csproj.GenerateResource.cache
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.csproj.CoreCompileInputs.cache
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.exe
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.pdb
