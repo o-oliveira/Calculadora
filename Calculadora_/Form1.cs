@@ -19,6 +19,7 @@ namespace Calculadora_
 
         bool verificar_operacao = false;
         bool mostrar_resultado = false;
+        bool verifica_res = false;
         double num1 = 0;
         double calculo = 0;
         string operacao = string.Empty;
@@ -40,7 +41,13 @@ namespace Calculadora_
                 * e começa novamente, guardando a última sequência em uma variável
                 */
                 txtTela.Text = nums.ToString();
-                //verifica volta a ser 'False'
+
+                //if (operacao == "√")
+                //    lblMensagem.Text = operacao + num1;
+                //else
+                //    lblMensagem.Text = num1 + " " + operacao;
+
+                //verifica_operacao volta a ser 'False'
                 verificar_operacao = false;
             }
         }
@@ -49,7 +56,7 @@ namespace Calculadora_
         {
             try
             {
-                //Método que irá verificar se algum botão de operação foi clicado
+                //Variável que irá verificar se algum botão de operação foi clicado
                 verificar_operacao = true;
                 //
                 if (mostrar_resultado == true)
@@ -63,6 +70,8 @@ namespace Calculadora_
                 */
                 num1 = double.Parse(txtTela.Text);
                 mostrar_resultado = true;
+
+                lblMensagem.Text = num1 + " " + operacao;
             }
             catch(Exception)
             {
@@ -89,16 +98,17 @@ namespace Calculadora_
                         calculo = num1 / double.Parse(txtTela.Text);
                         break;
                     case "√":
-                        calculo = Math.Sqrt(num1);
-                        txtTela.Text = calculo.ToString();
+                        //calculo = Math.Sqrt(num1);
+                        //txtTela.Text = calculo.ToString();
                         break;
                     case "±":
-                        NumeroNegativo(num1);
+                        //NumeroNegativo(num1);
                         break;
                 }
 
+                verifica_res = true;
+                lblMensagem.Text = string.Empty;
                 txtTela.Text = calculo.ToString();
-                lblMensagem.Text = num1 + " " + operacao + " " + txtTela.Text + " = ";
             }
             catch
             {
@@ -108,11 +118,11 @@ namespace Calculadora_
 
         public void NumeroNegativo(double num1)
         {
-            int tam = txtTela.Text.Length;
-            if(txtTela.Text != string.Empty)
-            {
-                txtTela.Text.Substring(0, 1);
-            }
+            //int tam = txtTela.Text.Length;
+            //if(txtTela.Text != string.Empty)
+            //{
+            //    txtTela.Text.Substring(0, 1);
+            //}
         }
 
         public void TratarDivisao()
@@ -133,6 +143,16 @@ namespace Calculadora_
 
         private void BtnNumeros_Click(object sender, EventArgs e)
         {
+            // Variável que verifica se o resultado foi ou não mostrado
+            if (verifica_res == true)
+            {
+                /* Se for 'true' quer dizer que foi mostrado, e ao clicar em um novo 
+                 * número, limpará a tela e começara uma nova sequência de números
+                 */
+                txtTela.Text = string.Empty;
+            }
+            // Retorna "vericiar_res" para false
+            verifica_res = false;
             //Instanciando os botões existentes nesta referência
             Button btn = (Button)sender;
             //Método 'MostrarNumeros' se verifica = 'False'
@@ -189,6 +209,11 @@ namespace Calculadora_
                 //Substring extrai caracteres desde indexInicio - Substrint(indexInicio, IndexFim)
                 //apaga os últimos números trazido pelo tamanho
                 txtTela.Text = txtTela.Text.Substring(0, tamanho - 1);
+        }
+
+        private void AboutCalc_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
