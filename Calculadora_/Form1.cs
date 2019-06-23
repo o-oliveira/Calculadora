@@ -88,13 +88,30 @@ namespace Calculadora_
                     case "/":
                         calculo = num1 / double.Parse(txtTela.Text);
                         break;
+                    case "√":
+                        calculo = Math.Sqrt(num1);
+                        txtTela.Text = calculo.ToString();
+                        break;
+                    case "±":
+                        NumeroNegativo(num1);
+                        break;
                 }
 
                 txtTela.Text = calculo.ToString();
+                lblMensagem.Text = num1 + " " + operacao + " " + txtTela.Text + " = ";
             }
             catch
             {
 
+            }
+        }
+
+        public void NumeroNegativo(double num1)
+        {
+            int tam = txtTela.Text.Length;
+            if(txtTela.Text != string.Empty)
+            {
+                txtTela.Text.Substring(0, 1);
             }
         }
 
