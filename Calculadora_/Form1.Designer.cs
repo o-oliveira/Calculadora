@@ -55,10 +55,11 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.CalcPadrao = new System.Windows.Forms.ToolStripMenuItem();
             this.CalcDev = new System.Windows.Forms.ToolStripMenuItem();
-            this.AboutCalc = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.conversorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutCalc = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCubo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -351,23 +352,6 @@
             this.CalcDev.Size = new System.Drawing.Size(197, 22);
             this.CalcDev.Text = "Programador";
             // 
-            // AboutCalc
-            // 
-            this.AboutCalc.Name = "AboutCalc";
-            this.AboutCalc.Size = new System.Drawing.Size(58, 20);
-            this.AboutCalc.Text = "Sobre...";
-            this.AboutCalc.Click += new System.EventHandler(this.AboutCalc_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(172, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 27);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "x³";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -379,12 +363,39 @@
             this.conversorToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.conversorToolStripMenuItem.Text = "Conversão de unidades";
             // 
+            // AboutCalc
+            // 
+            this.AboutCalc.Name = "AboutCalc";
+            this.AboutCalc.Size = new System.Drawing.Size(58, 20);
+            this.AboutCalc.Text = "Sobre...";
+            this.AboutCalc.Click += new System.EventHandler(this.AboutCalc_Click);
+            // 
+            // btnCubo
+            // 
+            this.btnCubo.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCubo.Location = new System.Drawing.Point(172, 127);
+            this.btnCubo.Name = "btnCubo";
+            this.btnCubo.Size = new System.Drawing.Size(36, 27);
+            this.btnCubo.TabIndex = 22;
+            this.btnCubo.Text = "x³";
+            this.btnCubo.UseVisualStyleBackColor = true;
+            this.btnCubo.Click += new System.EventHandler(this.BtnOperacoes_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(127, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(211, 224);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCubo);
             this.Controls.Add(this.btnPow);
             this.Controls.Add(this.btnSqrt);
             this.Controls.Add(this.lblMensagem);
@@ -415,6 +426,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -452,9 +464,10 @@
         private System.Windows.Forms.ToolStripMenuItem CalcPadrao;
         private System.Windows.Forms.ToolStripMenuItem CalcDev;
         private System.Windows.Forms.ToolStripMenuItem AboutCalc;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCubo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem conversorToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 

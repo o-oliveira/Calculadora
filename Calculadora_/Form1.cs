@@ -22,12 +22,13 @@ namespace Calculadora_
         bool verifica_res = false;
         double num1 = 0;
         double calculo = 0;
+        double n = 0;
         string operacao = string.Empty;
         int tamanho;
 
         public void MostrarNumeros(int nums)
         {
-            /*Se verifica for igual a 'False', cada número que digitar irá 
+            /* Se verifica for igual a 'False', cada número que digitar irá 
             * aparecer na tela junto do último número clicado
             */
             if (verificar_operacao == false)
@@ -37,18 +38,13 @@ namespace Calculadora_
             }
             else
             {
-                /*verifica = 'True' terminará a sequência de números digitada
+                /* Verifica = 'True' terminará a sequência de números digitada
                 * e começa novamente, guardando a última sequência em uma variável
                 */
                 txtTela.Text = nums.ToString();
-
-                //if (operacao == "√")
-                //    lblMensagem.Text = operacao + num1;
-                //else
-                //    lblMensagem.Text = num1 + " " + operacao;
-
                 //verifica_operacao volta a ser 'False'
                 verificar_operacao = false;
+                n = double.Parse(txtTela.Text);
             }
         }
 
@@ -70,7 +66,6 @@ namespace Calculadora_
                 */
                 num1 = double.Parse(txtTela.Text);
                 mostrar_resultado = true;
-
                 lblMensagem.Text = num1 + " " + operacao;
             }
             catch(Exception)
@@ -86,28 +81,22 @@ namespace Calculadora_
                 switch (operacao)
                 {
                     case "+":
-                        calculo = num1 + double.Parse(txtTela.Text);
+                        //calculo = num1 + double.Parse(txtTela.Text);
+                        calculo = num1 + n;
                         break;
                     case "-":
-                        calculo = num1 - double.Parse(txtTela.Text);
+                        calculo = num1 - n;
                         break;
                     case "*":
-                        calculo = num1 * double.Parse(txtTela.Text);
+                        calculo = num1 * n;
                         break;
                     case "/":
-                        calculo = num1 / double.Parse(txtTela.Text);
-                        break;
-                    case "√":
-                        //calculo = Math.Sqrt(num1);
-                        //txtTela.Text = calculo.ToString();
-                        break;
-                    case "±":
-                        //NumeroNegativo(num1);
+                        calculo = num1 / n;
                         break;
                 }
 
                 verifica_res = true;
-                lblMensagem.Text = string.Empty;
+                lblMensagem.Text = "";
                 txtTela.Text = calculo.ToString();
             }
             catch
@@ -127,10 +116,10 @@ namespace Calculadora_
 
         public void TratarDivisao()
         {
-            //Verifica se operação escolhida é divisão e se a divisão é por ZERO
+            // Verifica se operação escolhida é divisão, e se a divisão é por ZERO
             if (operacao == "/" & txtTela.Text == "0")
             {
-                //impossibilita de dividir por ZERO e mostra uma mensagem
+                //impossibilita de dividir por ZERO e mostra uma mensagem de erro
                 lblMensagem.Text = "Impossível dividir por zero";
                 txtTela.Enabled = false;
 
@@ -161,22 +150,30 @@ namespace Calculadora_
 
         private void BtnOperacoes_Click(object sender, EventArgs e)
         {
+            double raiz = 0;
             //Instanciando os botões existentes nesta referência
             Button button = (Button)sender;
             //Método 'Operacao', recebe como parâmetro o texto presente no botão que foi clicado
             Operacao(button.Text);
+
+            if (button.Text == "√")
+            {
+                raiz = Math.Sqrt(num1);
+                txtTela.Text = raiz.ToString();
+            }
         }
 
         private void BtnRes_Click(object sender, EventArgs e)
         {
             TratarDivisao();
+            label1.Text = n.ToString();
         }
 
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
-            txtTela.Text = lblMensagem.Text = string.Empty;
+            txtTela.Text = lblMensagem.Text = "";
+            num1 = calculo = n = 0;
             verificar_operacao = false;
-            num1 = calculo = 0;
             txtTela.Enabled = true;
         }
 
@@ -194,9 +191,8 @@ namespace Calculadora_
         {
             //retorna a quantidade de caracteres contido na Tela para a variável 'tamanho'
             tamanho = txtTela.Text.Length;
-            //se a quantidade for maior que ZERO, apaga o último caractere
             if (tamanho > 0)
-                //insere a vírgula somente se já houver números digitados
+                // Irá inserir a vírgula somente se já houver números digitados
                 txtTela.Text += btnVirgula.Text;
         }
 
@@ -212,6 +208,11 @@ namespace Calculadora_
         }
 
         private void AboutCalc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
