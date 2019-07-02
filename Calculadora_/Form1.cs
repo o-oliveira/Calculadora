@@ -32,7 +32,7 @@ namespace Calculadora_
             if (verificar_operacao == false)
             {
                 tamanho = txtTela.Text.Length;
-                if (tamanho >= 13)
+                if (tamanho >= 16)
                     txtTela.Enabled = false;
                 else
                     //gerar a sequência de números enquanto nenhum botão de operação for clicado
@@ -78,7 +78,7 @@ namespace Calculadora_
             }
         }
 
-        public void CalcularMostrar()
+        public string/*void*/ CalcularMostrar()
         {
             switch (operacao)
             {
@@ -100,6 +100,7 @@ namespace Calculadora_
             lblMensagem.Text = "";
             //mostra o resultado na tela
             txtTela.Text = calculo.ToString();
+            return operacao;
         }
 
         public void TratarDivisao()
@@ -116,12 +117,6 @@ namespace Calculadora_
                 CalcularMostrar();
                 // Após mostrar resultado, 'mostrar_resultado' retorna para 'false'
                 mostrar_resultado = false;
-        }
-
-        public double Operacoes(double x, double y)
-        {
-            double res = Math.Pow(x, y);
-            return res;
         }
 
         private void BtnNumeros_Click(object sender, EventArgs e)
@@ -144,7 +139,6 @@ namespace Calculadora_
 
         private void BtnOperacoes_Click(object sender, EventArgs e)
         {
-            double negativo = 0;
             //Instanciando os botões existentes nesta referência
             Button button = (Button)sender;
             //Método 'Operacao', recebe como parâmetro o texto presente no botão que foi clicado
@@ -165,12 +159,27 @@ namespace Calculadora_
                     txtTela.Text = Math.Pow(num1, 3).ToString();
                     break;
                 case "±":
-                    negativo = double.Parse(txtTela.Text) * -1;
-                    txtTela.Text = lblMensagem.Text = negativo.ToString();
-                    break;  //ARRUMAR ISSO AINDA REFERENTE AO NEGATIVO
+                    //num1 = double.Parse(txtTela.Text) * -1;
+                    //txtTela.Text = num1.ToString();
+                    NumNegativo(num1);
+
+                    //label1.Text = num1.ToString();
+                    //label2.Text = n.ToString();
+                    break;
             }
-            // Após mostrar o resultado das operações acima, 'mostrar_resultado' retorna o estado false
+            // Após mostrar o resultado das operações acima, 'mostrar_resultado' retorna ao estado false
             mostrar_resultado = false;
+        }
+
+        public double NumNegativo(double x/*, double y*/)
+        {
+            double res = 0;
+            x = double.Parse(txtTela.Text) * -1;
+            label1.Text = x.ToString();
+
+            label2.Text = CalcularMostrar();
+
+            return res;
         }
 
         private void BtnRes_Click(object sender, EventArgs e)
@@ -218,6 +227,11 @@ namespace Calculadora_
                 //Substring extrai caracteres desde indexInicio - Substrint(indexInicio, IndexFim)
                 //apaga os últimos números trazido pelo tamanho
                 txtTela.Text = txtTela.Text.Substring(0, tamanho - 1);
+        }
+
+        private void ToolStripFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
