@@ -8,3 +8,12 @@ C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\C
 C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.csproj.CoreCompileInputs.cache
 C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.exe
 C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.pdb
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\EO.Base.dll
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\EO.Pdf.dll
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\EO.WebBrowser.dll
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\EO.WebEngine.dll
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\EO.Base.xml
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\EO.Pdf.xml
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\EO.WebBrowser.xml
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\bin\Debug\EO.WebEngine.xml
+C:\Users\Omael\Documents\GitHub\Calculadora\Calculadora\Calculadora_\obj\Debug\Calculadora_.csproj.CopyComplete
